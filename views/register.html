@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .err_msg {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>欢迎注册</h1>
+        <form id="register_form" method="post" action="/register">
+            <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon2">email：</span>
+                <input type="text" class="form-control" placeholder="email" name="email" id="email">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon2">nickName：</span>
+                <input type="text" class="form-control" placeholder="nickName" name="nickName" id="name">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon2">password：</span>
+                <input type="password" class="form-control" placeholder="password" name="password" id="password">
+            </div>
+            <input type="submit" value="注册" id="btn">
+            <div id="err_msg" class="err_msg"></div>
+        </form>
+    </div>
+</body>
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script>
+    $('#register_form').on('submit', function (e) {
+        e.preventDefault()
+        var formData = $(this).serialize()
+        $.ajax({
+            url: '/register',
+            type: 'POST',
+            data: formData,
+            dataType: 'json',
+            success: function (data) {
+                if (data.code === 0) {
+                    window.location.href = '/'
+                } else if (data.code === 1) {
+                    console.log(data.msg)
+                    $('#err_msg').html(data.msg)
+                }
+            }
+        })
+
+
+
+    })
+
+
+</script>
+
+</html>
