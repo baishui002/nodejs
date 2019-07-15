@@ -7,7 +7,7 @@ let userSchema = new Schema({
         type: String,
         required: true
     },
-    nickName1: {
+    nickName: {
         type: String,
         required: true
     },

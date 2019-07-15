@@ -1,0 +1,5 @@
+{"username": "xiaoming", "gender": 0, "age": 12, "score": {"yuwen":79,"shuxue":80}, "hobbies": ["ball", "movie", "tv"]}
+{"username": "xiaohong", "gender": 1, "age": 25, "score": {"yuwen":73,"shuxue":86}, "hobbies": ["ball2", "movie2", "tv2"]}
+{"username": "ligang", "gender": 1, "age": 32, "score": {"yuwen":91,"shuxue":64}, "hobbies": ["ball4", "movie3", "tv3"]}
+{"username": "zhangsan", "gender": 0, "age": 42, "score": {"yuwen":59,"shuxue":74}, "hobbies": ["ball3", "movie4", "tv4"]}
+{"username": "lisi", "gender": 1, "age": 37, "score": {"yuwen":75,"shuxue":65}, "hobbies": ["ball4", "movie5", "tv5"]}

@@ -9,21 +9,25 @@
     <table class="table table-hover table-bordered" id="stu_table">
         <tr>
             <th>序号</th>
-            <th>昵称</th>
-            <th>邮箱</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>爱好</th>
             <th>操作</th>
         </tr>
-        <!-- {{each students}}
+        {{each students}}
         <tr>
             <td>{{$index + 1}}</td>
-            <td>{{$value.nickName}}</td>
-            <td>{{$value.email}}</td>
+            <td>{{$value.username}}</td>
+            <td>{{$value.gender}}</td>
+            <td>{{$value.age}}</td>
+            <td>{{$value.hobbies}}</td>
             <td>
                 <span>修改</span>
                 <span>删除</span>
             </td>
         </tr>
-        {{/each}} -->
+        {{/each}}
 
     </table>
 
@@ -31,29 +35,8 @@
 {{/block}}
 
 {{block 'script'}}
-<script id="stu" type="text/art-template">
-        {{each students}}
-            <tr>
-                <td>{{$index + 1}}</td>
-                <td>{{$value.nickName}}</td>
-                <td>{{$value.email}}</td>
-                <td>
-                    <span>修改</span>
-                    <span>删除</span>
-                </td>
-            </tr>
-        {{/each}}
-</script>
 <script>
-    students = [
-        { nickName: 'bai', email: '1223@12.com' },
-        { nickName: 'bai2', email: '1223@12.com' },
-        { nickName: 'bai3', email: '1223@12.com' }
-    ]
-    var html = template('stu', students);
-    console.log(template)
-    $('#stu_table').html(html);
-    console.log(13)
+    
 </script>
 
 {{/block}}

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/student', { useNewUrlParser: true }, () => {
+mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true }, () => {
     console.log('mongo connected succesfully...')
 })
 
