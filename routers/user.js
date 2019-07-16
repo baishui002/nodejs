@@ -11,6 +11,9 @@ router.get('/register', (req, res) => {
 router.post('/register', (req, res, next) => {
     let body = req.body;
 
+    User.find((err, data) => {
+        console.log('find:', data)
+    })
     User.findOne({
         $or: [
             {email: body.email},
@@ -25,7 +28,7 @@ router.post('/register', (req, res, next) => {
             // })
             return next(err)
         }
-
+        // console.log(123, data)
         if (data) {
             res.json({
                 code: 1,

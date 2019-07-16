@@ -1,5 +1,6 @@
 const express = require('express')
 const Student = require('../models/student')
+const User = require('../models/user')
 
 const router = express.Router()
 
@@ -12,12 +13,12 @@ router.get('/', (req, res, next) => {
     //         {nickName: 'baishui', email: '123@13.com'}
     //     ]
     // })
-    Student.find({}, (err, data) => {
+    Student.find((err, data) => {
         if (err) next(err)
 
-        console.log('data:', data)
+        console.log('data:1', data)
         res.render('index.html', {
-            Student: data
+            students: data
         })
     })
 })
